@@ -1,0 +1,12 @@
+﻿type,acc,level,penalty
+fixed,71.91,0.01,
+fixed,71.13,0.015,
+fixed,71.08,0.02,
+fixed,69.48,0.025,
+fixed,69.43,0.03,
+fixed,66.82,0.035,
+fixed,64.68,0.04,
+learned,71.19,,0
+learned,71.88,,-0.01
+learned,71.89,,-0.02
+,,,-0.03

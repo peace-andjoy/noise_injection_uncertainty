@@ -1,0 +1,88 @@
+/home/xueqiong/noise_injection_uncertainty/models/fixnoisy_resnet_cifar.py:91: UserWarning: nn.init.kaiming_normal is now deprecated in favor of nn.init.kaiming_normal_.
+  init.kaiming_normal(m.weight)
+No GPU!
+1,True
+save path : /home/xueqiong/noise_injection_uncertainty/save/final_res/cifar10_fixnoise_resnet20_160_SGD_notadv_0.1/test
+{'dataset': 'cifar10', 'adv_eval': False, 'data_path': '/home/xueqiong/CVPR_2019_PNI-master/data', 'batch_size': 500, 'workers': 4, 'input_noise': False, 'learning_rate': 0.1, 'momentum': 0.9, 'decay': 0.0003, 'fine_tune': False, 'use_cuda': False, 'arch': 'fixnoise_resnet20', 'adv_train': False, 'fix_noise_level': 0.1, 'ngpu': 1, 'folder': 'cifar10_fixnoise_resnet20_160_SGD_notadv_0.1', 'resume_path': '/home/xueqiong/noise_injection_uncertainty/save/final_res/cifar10_fixnoise_resnet20_160_SGD_notadv_0.1', 'save_path': '/home/xueqiong/noise_injection_uncertainty/save/final_res/cifar10_fixnoise_resnet20_160_SGD_notadv_0.1/test', 'manualSeed': 123, 'optimizer': 'SGD'}
+Random Seed: 123
+python version : 3.11.5 (main, Sep 11 2023, 13:23:44) [GCC 11.2.0]
+torch  version : 2.1.1+cu121
+cudnn  version : 8904
+Files already downloaded and verified
+Files already downloaded and verified
+CifarResNet : Depth : 20 , Layers for each block : 3
+=> network :
+ CifarResNet(
+  (conv_1_3x3): fixnoise_Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (bn_1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (stage_1): Sequential(
+    (0): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (2): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (stage_2): Sequential(
+    (0): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): DownsampleA(
+        (avg): AvgPool2d(kernel_size=1, stride=2, padding=0)
+      )
+    )
+    (1): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (2): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (stage_3): Sequential(
+    (0): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): DownsampleA(
+        (avg): AvgPool2d(kernel_size=1, stride=2, padding=0)
+      )
+    )
+    (1): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (2): ResNetBasicblock(
+      (conv_a): fixnoise_Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): fixnoise_Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AvgPool2d(kernel_size=8, stride=8, padding=0)
+  (classifier): fixnoise_Linear(in_features=64, out_features=10, bias=True)
+)
+=> loading checkpoint '/home/xueqiong/noise_injection_uncertainty/save/final_res/cifar10_fixnoise_resnet20_160_SGD_notadv_0.1/5589/checkpoint_epoch160.pth.tar'
+=> loaded checkpoint '/home/xueqiong/noise_injection_uncertainty/save/final_res/cifar10_fixnoise_resnet20_160_SGD_notadv_0.1/5589/checkpoint_epoch160.pth.tar' (epoch 160)
